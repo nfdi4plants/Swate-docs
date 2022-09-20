@@ -7,6 +7,8 @@ add toc: false
 add sidebar: _sidebars\mainSidebar.md
 ---
 
+<br>
+
 Altough i will mostly talk about the Ontology term search on this page, it will also feature useful information about term search related to the `Building Blocks` page. Such general applicable information will be listed under [General](#General).
 
 Ontologies are controlled vocabularies of Terms. Most of these Terms feature a name, a unique identifier and a description. We use these Ontology Terms for workflow description to utilize the benefits of a unified language in terms of machine-readability and reproducibility, following [FAIR principles](https://www.go-fair.org/fair-principles/).
@@ -16,8 +18,6 @@ Ontologies are controlled vocabularies of Terms. Most of these Terms feature a n
 3. [Relationship-Directed Search](#relationship-directed-search)
     1. [Theory](#Relationship-Directed-Search-Theory)
     2. [Usage](#Relationship-Directed-Search-Usage)
-
-<br>
 
 # General
 
@@ -29,7 +29,7 @@ You can find ontology term search fields on the ``Building Blocks`` and on the `
     - 👀 You can always ask us to add existing terms/ontologies or even new terms to our database. If you wish to do so, you can fill out an issue [here](https://github.com/nfdi4plants/nfdi4plants_ontology/issues/new/choose).
 - Search through database with autocomplete search on term names.
 - If you already know what you are searching for, you can also type in the term unique identifier (example: `MS:1000031`). 
-    - To trigger this search the input must match the [Swate Regex pattern](http://regexstorm.net/tester?p=%5ba-zA-Z0-9%5d%2b%3f%5b%3a_%5d%5ba-zA-Z0-9%5c-%5d%2b&i=MS%3a1000031%0d%0aMS_1000031%0d%0a) for term accessions.
+    - To trigger this search the input must match the [Swate Regex pattern](http://regexstorm.net/tester?p=%5b%5cw%5d%2b%3f%3a%5b%5cd%5d%2b&i=MS%3a1000031%0d%0aNFDI4PSO%3a1000161%0d%0a) for term accessions.
 - To execute the search query on any search text again after closing the dropdown with the search results <kbd>double click</kbd> into the search field.
 - You can also use the advanced term search for a more refined search approach. Just click on the blue link close to the related search field.
 
@@ -77,7 +77,7 @@ If a user wants to fill in `Parameter [instrument model]` then they are most lik
 
 ## Relationship-Directed Search Usage
 
-1. Choose any [descriptive building block](/docs/UserDocs/Docs03-Building-Blocks#descriptive-building-blocks.html) (Parameter, Characteristic, Factor) and select any number of rows in the main column.
+1. Choose any [descriptive building block](/docs/UserDocs/Docs03-Building-Blocks#descriptive-building-blocks.html) (all building blocks with 3 or more columns work, e.g. `Protocol Type`) and select any number of rows in the main column.
 2. Click in the ontology term search field under the `Terms` tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
     - This will create an additional field in front of the search field with the column header term inside.
     - For the example table under [theory](#Relationship-Directed-Search-Theory) one would click in any row below `Parameter [instrument model]` and then after clicking into the searchfield, one should see `instrument model`. In this case we call `instrument model` the **<u>parent term</u>** and all related terms **<u>child terms</u>**.
