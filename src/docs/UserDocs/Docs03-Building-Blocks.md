@@ -93,7 +93,7 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
         </p>
         </details>
     - When typing numbers into these cells, Excel will add the unit to the number values.
-    - 👀 The unit information for the main column cells can be seen in Excel. Select main column cells → `Home` → `Number` → small expand symbol on the bottom right ([image](/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22)).
+    - 👀 The unit information for the main column cells can be seen in Excel. Select main column cells → `Home` → `Number` → small expand symbol on the bottom right (<a href="/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22" target="_blank">image</a>).
 3. Click the `Update Ontology Terms` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
     - <details><summary>Expanded Table</summary>
         <p>
@@ -339,12 +339,14 @@ Swate and the ARC feature a set of six defined Building Block types. They can be
 
 **Examples**
 
-<details><summary>Example | Instrument Model.</summary>
+Centrifugation Time
+
+<details><summary>Example | Centrifugation Time.</summary>
 <p>
 
-| Parameter [instrument model] 	| Term Source REF (MS:1000031) 	| Term Accession Number (MS:1000031)        	|
-|------------------------------	|------------------------------	|-------------------------------------------	|
-| SCIEX instrument model       	| MS                           	| http://purl.obolibrary.org/obo/MS_1000121 	|
+| Parameter [Centrifugation Time] 	| Unit | Term Source REF (NCIT:C178881) 	| Term Accession Number (NCIT:C178881)        	|
+|------------------------------	| --- | ------------------------------	|-------------------------------------------	|
+| 1,00 minute       	| minute |  UO                           	| http://purl.obolibrary.org/obo/UO_0000031	|
 
 </p>
 </details>
@@ -362,6 +364,26 @@ Swate and the ARC feature a set of six defined Building Block types. They can be
 <p align="center">
 <img src="/images/UserDocs/Swate-FreeTextInput-Exp.jpg?v31.01.202" height="200px">
 </p>
+
+</p>
+</details>
+
+<br>
+
+### Component
+
+**Definition:** Aynthing physical, which can also be used up during the experiment, e.g. instrument names, software names, and reagents names.
+
+**Expected Values:** **MAY** be any from text, integer or float numbers with or without unit.
+
+**Examples**
+
+<details><summary>Example | Instrument Model.</summary>
+<p>
+
+| Component [instrument model] 	| Term Source REF (MS:1000031) 	| Term Accession Number (MS:1000031)        	|
+|------------------------------	|------------------------------	|-------------------------------------------	|
+| SCIEX instrument model       	| MS                           	| http://purl.obolibrary.org/obo/MS_1000121 	|
 
 </p>
 </details>
@@ -451,6 +473,35 @@ In a study measuring the influence of different quantities of fertilizer on plan
 
 <br>
 
+## Protocol Columns
+
+These columns have been added to better support conversion to endpoint repositories.
+
+### Protocol Type
+
+**Definition:** The type of protocol described with the assay. This building block is operated by Swate as a [descriptive building block](#descriptive-building-blocks).
+
+**Expected Values:** **MUST** be `Protocol Type` child term.
+
+**Examples**
+
+<details><summary>Example | Growth Protocol.</summary>
+<p>
+
+| Protocol Type	| Term Source REF (NFDI4PSO:1000161) 	| Term Accession Number (NFDI4PSO:1000161)        	|
+|------------------------------	| ------------------------------	|-------------------------------------------	|
+| growth protocol   | NFDI4PSO | http://purl.obolibrary.org/obo/NFDI4PSO_1000162	|
+
+</p>
+</details>
+<br>
+
+### Protocol REF
+
+**Definition:** The name of the protocol. By default the name is inferred by the name of the Excel worksheet. To circumvent some limitations (lenght, etc.) we also offer this column as alternative. This building block comprises only one column.
+
+**Expected Values:** **MUST** be string.
+
 ## Output Building Blocks
 
 **General Definition:** Each `Annotation Table` **MUST** contain exactly one output column.
@@ -463,6 +514,10 @@ In a study measuring the influence of different quantities of fertilizer on plan
 
 **Definition:** Use this building block type to reference any samples your experimental workflow produced.
 
-### Data File Name
+### Raw Data File
+
+**Definition:** Use this building block type to reference any untransformed and unprocessed samples you have produced.
+
+### Derived Data File
 
 **Definition:** Use this building block type to reference any samples your computational workflow produced.
