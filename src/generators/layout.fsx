@@ -73,7 +73,12 @@ let layout (ctx : SiteContents) (activePageTitle: string) bodyCnt =
                     }
                     
                     thead {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
                     }
 
                     nfdi-toc, nfdi-body {

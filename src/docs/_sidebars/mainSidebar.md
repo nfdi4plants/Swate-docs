@@ -10,8 +10,7 @@ Article Status: Publishable
 # 3. Building blocks:/docs/UserDocs/Docs03-Building-Blocks.html
 # 4. Filling cells with ontology terms:/docs/UserDocs/docs04-Ontology-Term-Search.html
 # 5. Templates:/docs/UserDocs/Docs05-Templates.html
-# Using the file picker:/docs/UserDocs/Using-the-File-Picker.html
-# Adding a Checklist to your table:/docs/UserDocs/Adding-a-Checklist-to-your-table.html
+# 6. ISA-JSON:/docs/UserDocs/Docs06-ISA-JSON.html
 ```
 
 ```Tutorials

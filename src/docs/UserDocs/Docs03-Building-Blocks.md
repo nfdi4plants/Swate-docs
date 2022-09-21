@@ -11,22 +11,22 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
 
 # Usage
 
-1. Navigate to the `Building Blocks` tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
+1. Navigate to the *Building Blocks* tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
 2. This page shows two functions, one to add new building blocks and one to update existing building blocks with a unit.
 
 ## Adding a Building Block
 
-<p align="center">
-<img src="/images/UserDocs/Swate-AddBuildingBlock-Exp.jpg?v31.01.22" height="300">
+<p style="display: flex; justify-content: center">
+<img src="/images/UserDocs/Swate-AddBuildingBlock-Exp.jpg?v31.01.22" style="height: 300px">
 </p>
 
 1. Choose the type of building block you want to add (A). For more information on building block types, click [here](#building-block-types).
-2. If you chose a [descriptive building block](#descriptive-building-blocks) type, use searchfield (B) to [search for a Ontology Term](https://github.com/nfdi4plants/Swate/wiki/docs04-Ontology-Term-Search). This term together with your building block type describes your workflow.
-    - Example 1: `Parameter [instrument model]` will describe any mass spectrometry instrument model used in your workflow ([source](http://www.ontobee.org/ontology/MS?iri=http://purl.obolibrary.org/obo/MS_1000031)).
+2. If you chose a [descriptive building block](#descriptive-building-blocks) type, use searchfield (B) to [search for a Ontology Term](/docs/UserDocs/docs04-Ontology-Term-Search.html). This term together with your building block type describes your workflow.
+    - Example 1: `Component [instrument model]` will describe any mass spectrometry instrument model used in your workflow ([source](http://www.ontobee.org/ontology/MS?iri=http://purl.obolibrary.org/obo/MS_1000031)).
     - <details><summary>Example 1 | Table</summary>
         <p>
 
-        | Parameter [instrument model] 	| Term Source REF (MS:1000031) 	| Term Accession Number (MS:1000031) 	|
+        | Component [instrument model] 	| Term Source REF (MS:1000031) 	| Term Accession Number (MS:1000031) 	|
         |------------------------------	|------------------------------	|------------------------------------	|
 
         </p>
@@ -40,30 +40,30 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
 
         </p>
         </details>
-    - If you cannot find a fitting term, you can use the `Advanced Term Search` for both searchfield (B) and (D) with the blue links above the `Add building block`-button.
+    - If you cannot find a fitting term, you can use the [Advanced Term Search](/docs/UserDocs/Docs07-Advanced-Term-Search.html) for both searchfield (B) and (D) with the blue links above the *Add building block*-button.
     - If you still cannot find a fitting term, you can write an issue to request a Term [here](https://github.com/nfdi4plants/nfdi4plants_ontology/issues/new/choose) **OR** use free text input.
-3. Click ``Add building block`` to insert the building block in an existing [Annotation Table](https://github.com/nfdi4plants/Swate/wiki/docs02-Annotation-Table). The new building block will be added to the right of any currently selected column of the table. 
+3. Click *Add building block* to insert the building block in an existing [Annotation Table](docs/UserDocs/docs02-Annotation-Table.html). The new building block will be added to the right of any currently selected column of the table. 
     - 👀 Swate will automatically skip any reference columns.
 4. Any input or output building block will only add a <u>single</u> column, any descriptive building block will add <u>three</u> columns or <u>four</u> column if it is created with a unit. Only the main column column will be visible by default, all other reference columns will be hidden.
-    - 👀 You can hold <kbd>Ctrl</kbd> and click the `Autoformat Table` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a> to adjust column widths and unhide all hidden columns.   
+    - 👀 You can hold <kbd>Ctrl</kbd> and click the *Autoformat Table* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a> to adjust column widths and unhide all hidden columns.   
 
 <br>
 
 ## Adding/Changing Unit of existing Building Block
 
-<p align="center">
-<img src="/images/UserDocs/Swate-UpdateUnit-Exp.jpg?v01.02.22" height="200">
+<p style="display: flex; justify-content: center">
+<img src="/images/UserDocs/Swate-UpdateUnit-Exp.jpg?v01.02.22" style="height: 200px">
 </p>
 
 1. Choose the building block for which you want to change the unit.
 2. Select any number of rows of that building block's main column.
 3. Use the searchfield to search for the wanted unit and click on the unit in the dropdown to select it.
-4. Click `Update unit for cells` to update the unit **only** for the selected rows.
-5. Update your tables unit references by clicking the `Update Ontology Terms` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>. 
+4. Click *Update unit for cells* to update the unit **only** for the selected rows.
+5. Update your tables unit references by clicking the *Update Ontology Terms* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>. 
 
 ### Update Unit Example
 
-1. Start by creating a building block ``vegetative growth time (TO:0000369)`` with the unit `hour (UO:0000032)`.
+1. Start by creating a building block `vegetative growth time (TO:0000369)` with the unit `hour (UO:0000032)`.
     - <details><summary>Expanded Table</summary>
         <p>
 
@@ -74,7 +74,7 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
 
         </p>
         </details>
-    - 👀 You can hold <kbd>Ctrl</kbd> and click the `Autoformat Table` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a> to adjust column widths and unhide all hidden columns.  
+    - 👀 You can hold <kbd>Ctrl</kbd> and click the *Autoformat Table* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a> to adjust column widths and unhide all hidden columns.  
 2. Create more rows for the table and fill the main column (`Parameter [vegetative growth time]`) with some data.
     - <details><summary>Expanded Table</summary>
         <p>
@@ -94,7 +94,7 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
         </details>
     - When typing numbers into these cells, Excel will add the unit to the number values.
     - 👀 The unit information for the main column cells can be seen in Excel. Select main column cells → `Home` → `Number` → small expand symbol on the bottom right (<a href="/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22" target="_blank">image</a>).
-3. Click the `Update Ontology Terms` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
+3. Click the *Update Ontology Terms* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
     - <details><summary>Expanded Table</summary>
         <p>
 
@@ -112,7 +112,7 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
         </p>
         </details>
 4. Select some or all rows of the main column `Parameter [vegetative growth time]` to mark them for the upcoming unit update. In this case i will select all but the first row.
-5. Search for a new unit, in this case `day (UO:0000033)`, select it and click `Update unit for cells`.
+5. Search for a new unit, in this case `day (UO:0000033)`, select it and click *Update unit for cells*.
     - <details><summary>Expanded Table</summary>
         <p>
 
@@ -131,7 +131,7 @@ Building Blocks are necessary to sustain ontology information in an [annotation 
         </details>
     - ⚠️ Notize how this only changed the values in the main column **and** the [number format](/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22).
         - 👀 Swate bases it's unit reference only on the [number format](/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22) of the related cells. You can change this by hand in the following format: `0,00 "unit term name"`. 
-6. Click the `Update Ontology Terms` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
+6. Click the *Update Ontology Terms* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
     - <details><summary>Expanded Table</summary>
         <p>
 
@@ -159,7 +159,7 @@ This workflow is especially important when working with [templates](/docs/UserDo
 |                             	|                                    	|                                          	|
 
 1. Select any number of rows of the `Characteristics [Plant age]` building block to mark it for the next steps.
-2. Search for the unit, which fits your experiment, in this case i will use: `day (UO:0000033)`. Select the unit term and click `Update unit for cells`.
+2. Search for the unit, which fits your experiment, in this case i will use: `day (UO:0000033)`. Select the unit term and click *Update unit for cells*.
     - <details><summary>Expanded Table</summary>
         <p>
 
@@ -197,7 +197,7 @@ This workflow is especially important when working with [templates](/docs/UserDo
             </details>
     - ⚠️ Notize how this only changed the values in the main column **and** the [number format](/images/UserDocs/Swate-numberFormat-Exp.jpg?v01.02.22).
 
-3. Click the `Update Ontology Terms` <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
+3. Click the *Update Ontology Terms* <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">quick access button</a>, to update the reference columns.
     - <details><summary>Expanded Table </summary>
         <p>
 
@@ -221,7 +221,7 @@ Swate and the ARC feature a set of six defined Building Block types. They can be
 
 ## Input Building Block/Source Name
 
-**Definition:** This is the only input column type and each `Annotation Table` **MUST** contain this column once. 
+**Definition:** This is the only input column type and each *Annotation Table* **MUST** contain this column once. 
 
 **Expected Values:** Unique identifier for input.
 - **MUST** be unique in the overlaying ARC.
@@ -284,13 +284,14 @@ Swate and the ARC feature a set of six defined Building Block types. They can be
 
 #### About Table Headers
 
-- The main column **MUST** start with `Parameter `, `Characteristic ` or `Factor `. This **MUST** be followed by squared brackets containing a Term name (`[term name]`). If <u>any</u> of the columns of the building block cannot be created, due to Excel requiring unique table headers, one **MUST** add a `#number` between the Term name and the closing squared bracket. Such as `Parameter [term name#1]`. This **MUST** be done for all columns of the building block except the unit column. `#number` must be an positive integer.
-    - In the abstract case we have for example `Parameter` and `Factor` with the same Term, only the reference columns would not be unique, but we still add the `#number` to all column header, such as: `Parameter [instrument model#2]`, ``Term Source REF (MS:1000031#2)``, ``Term Accession Number (MS:1000031#2)``
+- The main column **MUST** start with `Parameter `, `Characteristic `, `Component ` or `Factor `. This **MUST** be followed by squared brackets containing a Term name (`[term name]`). 
+An exception to this rule are so called *featured building blocks* which are handled just like descriptive building blocks. They have 3 or 4 columns and can be used for relationship-directed term search. An example would be `Protocol Type`.
+    - In the abstract case we have for example `Parameter` and `Factor` with the same Term, only the reference columns would not be unique, in this case we add a id to the reference columns, as excel does not allow non-unique column headers: Add the `#number` to all reference column headers, such as: `Component [instrument model]`, `Term Source REF (MS:1000031#2)`, `Term Accession Number (MS:1000031#2)`. `#number` must be an positive integer.
 - The columns of a building block **MUST** always be in the following order: main column, unit column (optional), Term Source REF, Term Accession Number.
 - Unit column headers **MUST** start with `Unit ` and be made unique with a `(#number)`, such as `Unit`, `Unit (#1)`, `Unit (#2)`, `Unit (#42)`. They **MAY** use ascending numbers. `#number` must be an positive integer.
 - The Term Source REF column header **MUST** start with `Term Source REF `, followed by a bracket which **MUST** contain the short Term identifier for the main column, if existing.
     - Example: `Parameter [instrument model]` is the main column, then `Term Source REF (MS:1000031)` must be the Term Source REF.
-    - Example free text input. If the main column was created with free text input, such as `Characteristics [free text input]`, the Term Source REF **MUST** be created with an empty bracket `Term Source REF ()`. In this case, headers **MUST** be made unique, by adding `#number` in the empty brackets. For example `Parameter [free text input#2]` and `Term Source REF (#2)`.
+    - Example free text input. If the main column was created with free text input, such as `Characteristics [free text input]`, the Term Source REF **MUST** be created with an empty bracket `Term Source REF ()`. In this case, headers **MUST** be made unique, by adding `#number` in the empty brackets. For example `Parameter [free text input]`, `Term Source REF ()`, .. and `Parameter [another one]`, `Term Source REF (#2)`, .. .
 - The Term Accession Number column header **MUST** follow the same rules as Term Source REF column headers, with the only difference to replace `Term Source REF ` with `Term Accession Number `.
 
 #### About Table Body
@@ -311,15 +312,13 @@ Swate and the ARC feature a set of six defined Building Block types. They can be
 |------------------------------	|------------------------------	|-------------------------------------------	|
 | SCIEX instrument model       	| MS                           	| http://purl.obolibrary.org/obo/MS_1000121 	|
 
-- In the case of any free text input all missing information **MUST** be filled with `user-specific`.
-    - Example: 
+- In the case of any free text input all missing information **MUST** be filled with `user-specific`. Example: 
 
 | Parameter [instrument model] 	| Term Source REF (MS:1000031) 	| Term Accession Number (MS:1000031) 	|
 |------------------------------	|------------------------------	|------------------------------------	|
 | free text input              	| user-specific                	| user-specific                      	|
 
-- 
-    - Example with unit free text input:
+- Example with unit free text input:
 
 | Parameter [day light exposure] 	| Unit    	| Term Source REF (PECO:0007163) 	| Term Accession Number (PECO:0007163) 	|
 |--------------------------------	|---------	|--------------------------------	|--------------------------------------	|
@@ -354,15 +353,15 @@ Centrifugation Time
 <details><summary>Example | Free text input.</summary>
 <p>
 
-| Parameter [Very important   unknown parameter] 	| Term Source REF () 	| Term Accession Number () 	|
+| Parameter [Very important unknown parameter] 	| Term Source REF () 	| Term Accession Number () 	|
 |------------------------------------------------	|--------------------	|--------------------------	|
 | very important unknown value                   	| user-specific      	| user-specific            	|
 
-- 👀 This example shows free text input. If you cannot find any fitting Ontology Term for either/both Building Block or value you can simply insert free text input. The above table shows how such input would be inserted into an `Annotation table`.
-- If you use `Add Building Block` or/and `Term search` to insert your free text input, Swate will handle all formatting for you.
+- 👀 This example shows free text input. If you cannot find any fitting Ontology Term for either/both Building Block or value you can simply insert free text input. The above table shows how such input would be inserted into an annotation table.
+- If you use *Add Building Block* or/and *Term search* to insert your free text input, Swate will handle all formatting for you.
 
-<p align="center">
-<img src="/images/UserDocs/Swate-FreeTextInput-Exp.jpg?v31.01.202" height="200px">
+<p style="display: flex; justify-content: center">
+<img src="/images/UserDocs/Swate-FreeTextInput-Exp.jpg?v31.01.202" style="height: 200px">
 </p>
 
 </p>
@@ -392,7 +391,7 @@ Centrifugation Time
 
 ### Factor
 
-**Definition:** While `Parameter` and `Characteristic` will be used to describe so called <u>controlled variables</u>, `Factor` **MUST** be used to describe <u>independent variable</u> of your experiment
+**Definition:** While *Parameter* and *Characteristic* will be used to describe so called <u>controlled variables</u>, *Factor* **MUST** be used to describe <u>independent variable</u> of your experiment
 
 > **Example: Effect of fertilizer on plant growths.**
 In a study measuring the influence of different quantities of fertilizer on plant growth, the <u>independent</u> variable would be the amount of fertilizer used. The <u>dependent variable</u> would be the growth in height or mass of the plant. The <u>controlled variables</u> would be the type of plant, the type of fertilizer, the amount of sunlight the plant gets, the size of the pots, etc. [(source)](https://en.wikipedia.org/wiki/Dependent_and_independent_variables#Examples)
@@ -479,9 +478,9 @@ These columns have been added to better support conversion to endpoint repositor
 
 ### Protocol Type
 
-**Definition:** The type of protocol described with the assay. This building block is operated by Swate as a [descriptive building block](#descriptive-building-blocks).
+**Definition:** The type of protocol described with the assay. This building block is handled by Swate as a [descriptive building block](#descriptive-building-blocks).
 
-**Expected Values:** **MUST** be `Protocol Type` child term.
+**Expected Values:** **MUST** be a *Protocol Type* child term.
 
 **Examples**
 
@@ -504,7 +503,7 @@ These columns have been added to better support conversion to endpoint repositor
 
 ## Output Building Blocks
 
-**General Definition:** Each `Annotation Table` **MUST** contain exactly one output column.
+**General Definition:** Each *Annotation Table* **MUST** contain exactly one output column.
 
 **Expected Values:** as in [Source Name](#input-building-blocksource-name).
 

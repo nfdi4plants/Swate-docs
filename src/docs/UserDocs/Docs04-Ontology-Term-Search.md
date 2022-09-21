@@ -9,7 +9,7 @@ add sidebar: _sidebars\mainSidebar.md
 
 <br>
 
-Altough i will mostly talk about the Ontology term search on this page, it will also feature useful information about term search related to the `Building Blocks` page. Such general applicable information will be listed under [General](#General).
+Altough i will mostly talk about the Ontology term search on this page, it will also feature useful information about term search related to the *Building Blocks* page. Such general applicable information will be listed under [General](#General).
 
 Ontologies are controlled vocabularies of Terms. Most of these Terms feature a name, a unique identifier and a description. We use these Ontology Terms for workflow description to utilize the benefits of a unified language in terms of machine-readability and reproducibility, following [FAIR principles](https://www.go-fair.org/fair-principles/).
 
@@ -21,7 +21,7 @@ Ontologies are controlled vocabularies of Terms. Most of these Terms feature a n
 
 # General
 
-You can find ontology term search fields on the ``Building Blocks`` and on the `Terms` tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
+You can find ontology term search fields on the *Building Blocks* and on the *Terms* tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
 
 **Features:**
 - Access to the SwateDB with a list of established, [external ontologies](https://github.com/nfdi4plants/nfdi4plants_ontology/blob/main/ext_ontologies.include) deemed fit for use in plant science. In addition we feature our very own ontology [nfdi4pso](https://github.com/nfdi4plants/nfdi4plants_ontology/blob/main/nfdi4plants_ontology.obo), which we extend with missing but necessary terms.
@@ -37,25 +37,27 @@ You can find ontology term search fields on the ``Building Blocks`` and on the `
 
 # Term Insert
 
-<p align="center">
-<img src="/images/UserDocs/Swate-TermInsert-Exp.jpg?v01.02.22" height="300">
+<br>
+
+<p style="display: flex; justify-content: center">
+<img src="/images/UserDocs/Swate-TermInsert-Exp.jpg?v01.02.22" style="height: 300px">
 </p>
 
-You can find this function on the `Terms` tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>. Use this function to insert terms in an [ISA-Tab conform way](https://isa-specs.readthedocs.io/en/latest/isatab.html#ontology-annotations), for example for Swate building blocks.
+You can find this function on the *Terms* tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>. Use this function to insert terms in an [ISA-Tab conform way](https://isa-specs.readthedocs.io/en/latest/isatab.html#ontology-annotations), for example for Swate building blocks.
 
 - Type in the search field to trigger the auto-complete function and find terms. Select the term you want or follow the information under [General](#General) for more information.
 - You can now insert the chosen term anywhere in Excel, not only inside of a Swate [annotation table](/docs/UserDocs/Docs02-Annotation-Table.html).
     - Terms will be added to all selected rows in the format:
 
-        ``| term name | term source ontology | purl.obolibrary.org link for term |``
+        `| term name | term source ontology | purl.obolibrary.org link for term |`
         
         This always done for the next <u>three</u> Excel columns including the selected column.
 
-<p align="center">
-<img src="/images/UserDocs/Swate-TermInsert2-Exp.jpg?v01.02.22" height="100">
+<p style="display: flex; justify-content: center">
+<img src="/images/UserDocs/Swate-TermInsert2-Exp.jpg?v01.02.22" style="height: 100px">
 </p>
 
-- You can also click on the `Copy to Clipboard`-button next to the insert-term-button. This will copy the term information (name, source ontology, purl link) to your clipboard and you can paste it into Excel with <kbd>Ctrl</kbd> + <kbd>V</kbd>. This will enable you to paste the information spread over <u>three</u> rows instead of columns. This works only for a single column.
+- You can also click on the *Copy to Clipboard*-button next to the insert term-button. This will copy the term information (name, source ontology, purl link) to your clipboard and you can paste it into Excel with <kbd>Ctrl</kbd> + <kbd>V</kbd>. This will enable you to paste the information spread over <u>three</u> rows instead of columns. This works only for a single column.
 
 <br>
 
@@ -67,20 +69,20 @@ Ontology terms contain different types of relationships between each other. For 
 
 Let's look at this with an example:
 
-| Source Name | Parameter [instrument model] | Term Source REF (MS:1000031) | Term Accession Number (MS:1000031) | Sample Name |
+| Source Name | Component [instrument model] | Term Source REF (MS:1000031) | Term Accession Number (MS:1000031) | Sample Name |
 |-------------|------------------------------|------------------------------|------------------------------------|-------------|
 |             |                              |                              |                                    |             |
 
-If a user wants to fill in `Parameter [instrument model]` then they are most likely looking for the instrument model used in their experimental workflow. Here for example the instrument model series and the exact instrument models are connected to `instrument model (MS:1000031)` via [``is_a`` relationships](/images/UserDocs/Swate-RelationshipGraph-Exp.jpg). 
+If a user wants to fill in `Component [instrument model]` then they are most likely looking for the instrument model used in their experimental workflow. Here for example the instrument model series and the exact instrument models are connected to `instrument model (MS:1000031)` via [`is_a` relationships](/images/UserDocs/Swate-RelationshipGraph-Exp.jpg). 
 
 <br>
 
 ## Relationship-Directed Search Usage
 
 1. Choose any [descriptive building block](/docs/UserDocs/Docs03-Building-Blocks#descriptive-building-blocks.html) (all building blocks with 3 or more columns work, e.g. `Protocol Type`) and select any number of rows in the main column.
-2. Click in the ontology term search field under the `Terms` tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
+2. Click in the ontology term search field under the *Terms* tab in the <a href="/images/UserDocs/Swate-Overlay-Exp.jpg" target="_blank">navbar</a>.
     - This will create an additional field in front of the search field with the column header term inside.
     - For the example table under [theory](#Relationship-Directed-Search-Theory) one would click in any row below `Parameter [instrument model]` and then after clicking into the searchfield, one should see `instrument model`. In this case we call `instrument model` the **<u>parent term</u>** and all related terms **<u>child terms</u>**.
-3. While the slider next to `Use related term directed search` is turned on, you will now **ONLY** search through related terms.
+3. While the slider next to *Use related term directed search* is turned on, you will now **ONLY** search through related terms.
     - 👀 You can also explore all available child terms, by <kbd>double clicking</kbd> into the empty search field. 
-4. You can turn this feature off with the slider next to `Use related term directed search`.
+4. You can turn this feature off with the slider next to *Use related term directed search*.
