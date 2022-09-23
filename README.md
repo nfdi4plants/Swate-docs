@@ -1,5 +1,7 @@
 # Swate_docs
 
+[Link to in depth docs](https://nfdi4plants.github.io/Swate-docs/)
+
 After initializing this template please run the following commands to get started:
 
 1. `dotnet tool restore`, will restore local dotnet tools _fornax_ and _paket_.
