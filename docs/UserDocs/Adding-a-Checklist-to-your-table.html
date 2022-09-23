@@ -1,0 +1,137 @@
+<html class="has-navbar-fixed-top" style="scroll-behavior: smooth;">
+  <head>
+
+        <script type="text/javascript">
+          var wsUri = "ws://localhost:8080/websocket";
+      function init()
+      {
+        websocket = new WebSocket(wsUri);
+        websocket.onclose = function(evt) { onClose(evt) };
+      }
+      function onClose(evt)
+      {
+        console.log('closing');
+        websocket.close();
+        document.location.reload();
+      }
+      window.addEventListener("load", init, false);
+      </script>
+            <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      DataPLANT documentation - Checklists
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <script type="module" src="/js/bundle.js"></script>
+    <style>
+      
+                    body {
+                    margin: 0px;
+                    }
+
+                    thead tr th, strong {
+                        color: var(--accent-text-color) !important
+                    }
+
+                    a {
+                    color: var(--link-color, #4FB3D9) !important;
+                    }
+
+                    a:hover {
+                    color: var(--link-hover-color, #3A3A3A) !important;
+                    }
+                    
+                    thead {
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
+                    }
+
+                    nfdi-toc, nfdi-body {
+                        --outside-background-color: rgb(240, 243, 246);
+                        --header-color: rgb(10, 12, 16)
+                        --element-text-color: #0E1116;
+                        --element-background-color: #fff;
+                        --accent-text-color: rgb(31, 194, 167);
+                        --link-color: #4FB3D9;
+                        --link-hover-color: #8ad3ee;
+                    }
+
+                
+    </style>
+  </head>
+  <nfdi-navbar></nfdi-navbar>
+  <body>
+    <nfdi-body class="content" hasSidebar="true">
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Feature Documentation
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/index.html">Home</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs01-installing-Swate.html">1. Installing Swate</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs02-Annotation-Table.html">2. Annotation tables</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs03-Building-Blocks.html">3. Building blocks</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs04-Ontology-Term-Search.html">4. Filling cells with ontology terms</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs07-Advanced-Term-Search.html">5. Advanced Term Search</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs05-Templates.html">6. Templates</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs06-ISA-JSON.html">7. ISA-JSON</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Tutorials
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/TL;DR.html">TL;DR</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Dev
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs00-Description.html">Project Description</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs01-Setup.html">Development Setup</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs02-Docker-Publish.html">Docker Publish</h1>
+<!-- # Swate Custom Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Custom-Xml-File
+# Swate Protocol Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-ProtocolGroup-Custom-Xml
+# Swate Validation Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-Validation-Custom-Xml -->
+
+      </nfdi-sidebar-element>
+      <h1 class="front-header">
+        Checklists
+      </h1>
+      <i class="help">
+        last updated at 2022-09-19
+      </i>
+      <p>You can add a Checklist to your excel workbook. Click on the 'Validation' button and click on 'Add checklist to workbook'. Swate adds a checklist file to the workbook that can be read and evaluated afterwards. If you want to add content types or the importance of your headers, click on the header, here examplarily: 'Characteristics [leaf size]', and select the content type by clicking on a respective type, and choose the importance via clicking on the respective number of stars. Click on 'Update table representation' to write the changes into the checklist file.<br />
+<img src="https://user-images.githubusercontent.com/47781170/110664316-926ca200-81c7-11eb-9b99-57fba22e58ee.png" alt="06_AddingAChecklistToYourTable_1" /></p>
+
+      <h3>
+        Dataplant Support
+      </h3>
+      <div>
+        Besides these technical solutions, DataPLANT supports you with community-engaged data stewardship. For further assistance, feel free to reach out via our 
+        <a href="https://support.nfdi4plants.org">
+          helpdesk
+        </a>
+         or by contacting us 
+        <a href="javascript:location='mailto:info@nfdi4plants.org';void 0">
+          directly
+        </a>
+        .
+      </div>
+      <div>
+        <a target="_blank" href="https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/docs/UserDocs/Adding-a-Checklist-to-your-table.md" style="margin-left: auto; display: block; width: 130px;">
+          ✏️ Edit this page
+        </a>
+      </div>
+    </nfdi-body>
+  </body>
+  <nfdi-footer></nfdi-footer>
+</html>

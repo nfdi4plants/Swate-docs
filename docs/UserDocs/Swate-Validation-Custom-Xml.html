@@ -1,0 +1,229 @@
+<html class="has-navbar-fixed-top" style="scroll-behavior: smooth;">
+  <head>
+
+        <script type="text/javascript">
+          var wsUri = "ws://localhost:8080/websocket";
+      function init()
+      {
+        websocket = new WebSocket(wsUri);
+        websocket.onclose = function(evt) { onClose(evt) };
+      }
+      function onClose(evt)
+      {
+        console.log('closing');
+        websocket.close();
+        document.location.reload();
+      }
+      window.addEventListener("load", init, false);
+      </script>
+            <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      DataPLANT documentation - Custom XML Validation (deprecated)
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <script type="module" src="/js/bundle.js"></script>
+    <style>
+      
+                    body {
+                    margin: 0px;
+                    }
+
+                    thead tr th, strong {
+                        color: var(--accent-text-color) !important
+                    }
+
+                    a {
+                    color: var(--link-color, #4FB3D9) !important;
+                    }
+
+                    a:hover {
+                    color: var(--link-hover-color, #3A3A3A) !important;
+                    }
+                    
+                    thead {
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
+                    }
+
+                    nfdi-toc, nfdi-body {
+                        --outside-background-color: rgb(240, 243, 246);
+                        --header-color: rgb(10, 12, 16)
+                        --element-text-color: #0E1116;
+                        --element-background-color: #fff;
+                        --accent-text-color: rgb(31, 194, 167);
+                        --link-color: #4FB3D9;
+                        --link-hover-color: #8ad3ee;
+                    }
+
+                
+    </style>
+  </head>
+  <nfdi-navbar></nfdi-navbar>
+  <body>
+    <nfdi-body class="content" hasSidebar="true">
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Feature Documentation
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/index.html">Home</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs01-installing-Swate.html">1. Installing Swate</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs02-Annotation-Table.html">2. Annotation tables</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs03-Building-Blocks.html">3. Building blocks</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs04-Ontology-Term-Search.html">4. Filling cells with ontology terms</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs07-Advanced-Term-Search.html">5. Advanced Term Search</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs05-Templates.html">6. Templates</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs06-ISA-JSON.html">7. ISA-JSON</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Tutorials
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/TL;DR.html">TL;DR</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Dev
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs00-Description.html">Project Description</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs01-Setup.html">Development Setup</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs02-Docker-Publish.html">Docker Publish</h1>
+<!-- # Swate Custom Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Custom-Xml-File
+# Swate Protocol Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-ProtocolGroup-Custom-Xml
+# Swate Validation Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-Validation-Custom-Xml -->
+
+      </nfdi-sidebar-element>
+      <h1 class="front-header">
+        Custom XML Validation (deprecated)
+      </h1>
+      <i class="help">
+        last updated at 2022-09-19
+      </i>
+      <ol>
+<li><a href="#Swate-Validation-Xml-Example">Xml Example</a></li>
+<li><a href="#swate-validation-xml-schema-xsd">Xml Schema (XSD)</a></li>
+<li><a href="#Version-History">Version History</a></li>
+</ol>
+<p>Excel saves all custom generated xml inside the <code>&lt;customXml&gt;</code> tag. Swate will save all validation information inside of this <code>&lt;customXml&gt;</code> in a <code>&lt;Validation&gt;</code> tag.</p>
+<p>Each <code>&lt;SwateTable&gt;</code> tag CAN contain the following validation xml.</p>
+<nfdi-h1 id="swate-validation-xml-example">Swate Validation Xml Example</nfdi-h1>
+<nfdi-code class="language-xml">&lt;TableValidation DateTime="2021-02-23 16:33" SwateVersion="0.4.0" TableName="annotationTable" Userlist="" WorksheetName="Sheet1">
+  &lt;ColumnValidation ColumnAdress="0" ColumnHeader="Source Name" Importance="None" Unit="None" ValidationFormat="None"/>
+  &lt;ColumnValidation ColumnAdress="1" ColumnHeader="Parameter [Peptidase]" Importance="10" Unit="None" ValidationFormat="OntologyTerm Peptidase"/>
+  &lt;ColumnValidation ColumnAdress="4" ColumnHeader="Parameter [temperature]" Importance="None" Unit="degree Celsius" ValidationFormat="None"/>
+  &lt;ColumnValidation ColumnAdress="10" ColumnHeader="Parameter [time]" Importance="None" Unit="hour" ValidationFormat="None"/>
+  &lt;ColumnValidation ColumnAdress="16" ColumnHeader="Sample Name" Importance="None" Unit="None" ValidationFormat="None"/>
+&lt;/TableValidation>
+</nfdi-code>
+<nfdi-h1 id="swate-validation-xml-schema-xsd">Swate Validation Xml Schema (XSD)</nfdi-h1>
+<p>This is the xml schema that can be used to <a href="https://www.freeformatter.com/xml-validator-xsd.html">validate</a> <code>&lt;Validation&gt;</code> xml in the excel <code>customXml</code>.</p>
+<nfdi-code class="language-XSD">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  &lt;xs:element name="TableValidation">
+    &lt;xs:complexType>
+      &lt;xs:sequence>
+        &lt;xs:element name="ColumnValidation" maxOccurs="unbounded" minOccurs="0">
+          &lt;xs:complexType>
+            &lt;xs:simpleContent>
+              &lt;xs:extension base="xs:string">
+                &lt;xs:attribute type="xs:integer" name="ColumnAdress" use="required"/>
+                &lt;xs:attribute type="xs:string" name="ColumnHeader" use="required"/>
+                &lt;xs:attribute type="xs:string" name="Importance" use="required"/>
+                &lt;xs:attribute type="xs:string" name="Unit" use="required"/>
+                &lt;xs:attribute type="xs:string" name="ValidationFormat" use="required"/>
+              &lt;/xs:extension>
+            &lt;/xs:simpleContent>
+          &lt;/xs:complexType>
+        &lt;/xs:element>
+      &lt;/xs:sequence>
+      &lt;xs:attribute type="xs:string" name="DateTime" use="required"/>
+      &lt;xs:attribute type="xs:string" name="SwateVersion" use="required"/>
+      &lt;xs:attribute type="xs:string" name="TableName" use="required"/>
+      &lt;xs:attribute type="xs:string" name="Userlist" use="required"/>
+      &lt;xs:attribute type="xs:string" name="WorksheetName" use="required"/>
+    &lt;/xs:complexType>
+  &lt;/xs:element>
+&lt;/xs:schema>
+</nfdi-code>
+<nfdi-h2 id="version-history">Version History</nfdi-h2>
+<p>The version given is the last version that used the given xml schema.</p>
+<details>
+  <summary>Version 3.1</summary>
+<nfdi-code class="language-xml">&lt;?xml version="1.0"?>
+&lt;Validation SwateVersion="0.2.1">
+&lt;TableValidation DateTime="2021-01-29 10:09" SwateVersion="0.2.1" TableName="annotationTable" Userlist="" WorksheetName="Sheet1">
+  &lt;ColumnValidation ColumnAdress="0" ColumnHeader="Source Name" Importance="100" Unit="None" ValidationFormat="Text"/>
+  &lt;ColumnValidation ColumnAdress="1" ColumnHeader="Parameter [instrument model]" Importance="100" Unit="None" ValidationFormat="OntologyTerm instrument model"/>
+  &lt;ColumnValidation ColumnAdress="4" ColumnHeader="Factor [day light exposure]" Importance="50" Unit="lux" ValidationFormat="Number"/>
+  &lt;ColumnValidation ColumnAdress="10" ColumnHeader="Sample Name" Importance="100" Unit="None" ValidationFormat="Text"/>
+&lt;/TableValidation>
+&lt;/Validation>
+</nfdi-code>
+<nfdi-code class="language-XSD">&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+&lt;xs:element name="Validation">
+  &lt;xs:complexType>
+    &lt;xs:sequence>
+      &lt;xs:element name="TableValidation">
+        &lt;xs:complexType>
+          &lt;xs:sequence>
+            &lt;xs:element name="ColumnValidation" maxOccurs="unbounded" minOccurs="0">
+              &lt;xs:complexType>
+                &lt;xs:simpleContent>
+                  &lt;xs:extension base="xs:string">
+                    &lt;xs:attribute type="xs:integer" name="ColumnAdress" use="required"/>
+                    &lt;xs:attribute type="xs:string" name="ColumnHeader" use="required"/>
+                    &lt;xs:attribute type="xs:integer" name="Importance" use="required"/>
+                    &lt;xs:attribute type="xs:string" name="Unit" use="required"/>
+                    &lt;xs:attribute type="xs:string" name="ValidationFormat" use="required"/>
+                  &lt;/xs:extension>
+                &lt;/xs:simpleContent>
+              &lt;/xs:complexType>
+            &lt;/xs:element>
+          &lt;/xs:sequence>
+          &lt;xs:attribute type="xs:string" name="DateTime"/>
+          &lt;xs:attribute type="xs:string" name="SwateVersion"/>
+          &lt;xs:attribute type="xs:string" name="TableName"/>
+          &lt;xs:attribute type="xs:string" name="Userlist"/>
+          &lt;xs:attribute type="xs:string" name="WorksheetName"/>
+        &lt;/xs:complexType>
+      &lt;/xs:element>
+    &lt;/xs:sequence>
+    &lt;xs:attribute type="xs:string" name="SwateVersion"/>
+  &lt;/xs:complexType>
+&lt;/xs:element>
+&lt;/xs:schema>
+</nfdi-code>
+</details>
+
+      <h3>
+        Dataplant Support
+      </h3>
+      <div>
+        Besides these technical solutions, DataPLANT supports you with community-engaged data stewardship. For further assistance, feel free to reach out via our 
+        <a href="https://support.nfdi4plants.org">
+          helpdesk
+        </a>
+         or by contacting us 
+        <a href="javascript:location='mailto:info@nfdi4plants.org';void 0">
+          directly
+        </a>
+        .
+      </div>
+      <div>
+        <a target="_blank" href="https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/docs/UserDocs/Swate-Validation-Custom-Xml.md" style="margin-left: auto; display: block; width: 130px;">
+          ✏️ Edit this page
+        </a>
+      </div>
+    </nfdi-body>
+  </body>
+  <nfdi-footer></nfdi-footer>
+</html>

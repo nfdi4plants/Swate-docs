@@ -1,0 +1,273 @@
+<html class="has-navbar-fixed-top" style="scroll-behavior: smooth;">
+  <head>
+
+        <script type="text/javascript">
+          var wsUri = "ws://localhost:8080/websocket";
+      function init()
+      {
+        websocket = new WebSocket(wsUri);
+        websocket.onclose = function(evt) { onClose(evt) };
+      }
+      function onClose(evt)
+      {
+        console.log('closing');
+        websocket.close();
+        document.location.reload();
+      }
+      window.addEventListener("load", init, false);
+      </script>
+            <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      DataPLANT documentation - TL;DR
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <script type="module" src="/js/bundle.js"></script>
+    <style>
+      
+                    body {
+                    margin: 0px;
+                    }
+
+                    thead tr th, strong {
+                        color: var(--accent-text-color) !important
+                    }
+
+                    a {
+                    color: var(--link-color, #4FB3D9) !important;
+                    }
+
+                    a:hover {
+                    color: var(--link-hover-color, #3A3A3A) !important;
+                    }
+                    
+                    thead {
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
+                    }
+
+                    nfdi-toc, nfdi-body {
+                        --outside-background-color: rgb(240, 243, 246);
+                        --header-color: rgb(10, 12, 16)
+                        --element-text-color: #0E1116;
+                        --element-background-color: #fff;
+                        --accent-text-color: rgb(31, 194, 167);
+                        --link-color: #4FB3D9;
+                        --link-hover-color: #8ad3ee;
+                    }
+
+                
+    </style>
+  </head>
+  <nfdi-navbar></nfdi-navbar>
+  <body>
+    <nfdi-body class="content" hasSidebar="true">
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Feature Documentation
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/index.html">Home</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs01-installing-Swate.html">1. Installing Swate</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs02-Annotation-Table.html">2. Annotation tables</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs03-Building-Blocks.html">3. Building blocks</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs04-Ontology-Term-Search.html">4. Filling cells with ontology terms</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs07-Advanced-Term-Search.html">5. Advanced Term Search</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs05-Templates.html">6. Templates</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs06-ISA-JSON.html">7. ISA-JSON</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Tutorials
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/TL;DR.html">TL;DR</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Dev
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs00-Description.html">Project Description</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs01-Setup.html">Development Setup</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs02-Docker-Publish.html">Docker Publish</h1>
+<!-- # Swate Custom Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Custom-Xml-File
+# Swate Protocol Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-ProtocolGroup-Custom-Xml
+# Swate Validation Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-Validation-Custom-Xml -->
+
+      </nfdi-sidebar-element>
+      <h1 class="front-header">
+        TL;DR
+      </h1>
+      <i class="help">
+        last updated at 2022-09-19
+      </i>
+      <p>Swate is a FAIR workflow annotation Microsoft Excel add-in.</p>
+<nfdi-h2 id="requirements">Requirements</nfdi-h2>
+<ol>
+<li>Existing Microsoft Account with Excel 2019 or newer <strong>OR</strong> a free Microsoft account to use Excel online.</li>
+</ol>
+<nfdi-h2 id="installation">Installation</nfdi-h2>
+<p>Follow the <a href="/docs/UserDocs/docs01-installing-Swate#quickstart">Quickstart</a> guide (~2min).</p>
+<nfdi-h2 id="usage-10min">Usage (~10min)</nfdi-h2>
+<p>Swate uses an Excel table as main tool to annotate workflows. Each table represent one process from input to output.</p>
+<p>Examples:</p>
+<ul>
+<li>Plant -Sampling-&gt; Extract</li>
+<li>Measured data files -statistical analysis-&gt; result files</li>
+</ul>
+<nfdi-h3 id="annotation-workflow">Annotation Workflow</nfdi-h3>
+<img src="/images/UserDocs/Swate-Overlay-Exp.jpg?v27.01.202" style="height: 300px">
+<p><em>This image displays major areas of the Swate user interface, which will be referenced below.</em></p>
+<ol>
+<li>Start by creating a Swate annotation table.
+<ul>
+<li>Use the yellow box pop-up button <em>OR</em> click the <em>Add Annotation Table</em> quick access button.</li>
+<li>Only one table per Excel sheet.</li>
+<li>Each table is by default created with an input (<code>Source Name</code>) and an output (<code>Sample Name</code>) column.</li>
+</ul>
+</li>
+<li>If not active use the navbar to go to <em>Building Blocks</em>. Here you can add <em>Building Blocks</em> to the table.</li>
+<li>Use the first function block to search for <code>instrument model</code>. This search looks for fitting <em>Terms</em> in our <em>Ontology</em> database.</li>
+<li>Select the Term with the id <code>MS:1000031</code> and, select <em>Component</em> instead of <em>Parameter</em> and click <em>Add building block</em>.
+<ul>
+<li>This adds three columns to your table, one visible and two hidden.</li>
+</ul>
+</li>
+<li>Reselect <em>Parameter</em>, search for <code>sample volume</code> and select the term with id <code>MS:1000005</code>, then check the button for <em>This Parameter has a unit</em> and search for <code>microliter</code> in the just enabled searchbar and select <code>UO:0000101</code>. Add the building block.
+<ul>
+<li>This adds four columns to your table, one visible and three hidden.</li>
+</ul>
+</li>
+<li>Select any field below <code>Parameter [sample volume]</code> and add any numbers as volume.
+<ul>
+<li>You can see that the numbers are complemented with the chosen unit. for example <code>10.00 microliter</code>.</li>
+</ul>
+</li>
+<li>Navigate to <em>Terms</em> in the Navbar and select any number of fields below <code>Component [instrument model]</code>. Then click into the searchfild in Swate.
+<ul>
+<li>You should see, that <code>instrument model</code> will be transferred in a field in front of the search field. Any search will now be done on terms related to <code>instrument model</code>.</li>
+</ul>
+</li>
+<li>You can search or <kbd>double click</kbd> into the search field to show all related terms. Select any instrument model and click <em>Fill selected cells with this term</em>.</li>
+<li>Hold <kbd>Ctrl</kbd> and click the <em>Autoformat Table</em> quick access button to adjust column widths and unhide all hidden columns.
+<ul>
+<li>You can see that your instrument model of choice was added with id and source Ontology in the reference (hidden) columns.</li>
+</ul>
+</li>
+<li>Click the <em>Update Ontology Terms</em> quick access buttons.
+<ul>
+<li>This updates all reference columns according to the main column. In this case the reference columns for <code>Parameter [sample volume]</code> are updated with the id and source ontology of the <code>microliter</code> unit.</li>
+<li>At this point. Your table should look similiar to this:</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Source Name</th>
+<th>Parameter [instrument model]</th>
+<th>Term Source REF (MS:1000031)</th>
+<th>Term Accession Number (MS:1000031)</th>
+<th>Parameter [sample volume]</th>
+<th>Unit</th>
+<th>Term Source REF (MS:1000005)</th>
+<th>Term Accession Number (MS:1000005)</th>
+<th>Sample Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>SCIEX instrument model</td>
+<td>MS</td>
+<td><a href="http://purl.obolibrary.org/obo/MS_1000121">http://purl.obolibrary.org/obo/MS_1000121</a></td>
+<td>10.00 microliter</td>
+<td>microliter</td>
+<td>UO</td>
+<td><a href="http://purl.obolibrary.org/obo/UO_0000101">http://purl.obolibrary.org/obo/UO_0000101</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SCIEX instrument model</td>
+<td>MS</td>
+<td><a href="http://purl.obolibrary.org/obo/MS_1000121">http://purl.obolibrary.org/obo/MS_1000121</a></td>
+<td>5.00 microliter</td>
+<td>microliter</td>
+<td>UO</td>
+<td><a href="http://purl.obolibrary.org/obo/UO_0000101">http://purl.obolibrary.org/obo/UO_0000101</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SCIEX instrument model</td>
+<td>MS</td>
+<td><a href="http://purl.obolibrary.org/obo/MS_1000121">http://purl.obolibrary.org/obo/MS_1000121</a></td>
+<td>5.00 microliter</td>
+<td>microliter</td>
+<td>UO</td>
+<td><a href="http://purl.obolibrary.org/obo/UO_0000101">http://purl.obolibrary.org/obo/UO_0000101</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SCIEX instrument model</td>
+<td>MS</td>
+<td><a href="http://purl.obolibrary.org/obo/MS_1000121">http://purl.obolibrary.org/obo/MS_1000121</a></td>
+<td>5.00 microliter</td>
+<td>microliter</td>
+<td>UO</td>
+<td><a href="http://purl.obolibrary.org/obo/UO_0000101">http://purl.obolibrary.org/obo/UO_0000101</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="11">
+<li>Click the <em>Autoformat Table</em> quick access button without holding <kbd>Ctrl</kbd> to hide all reference columns.</li>
+<li>Nearly done! 🎉 Navigate to <em>Templates</em> in the Navbar and click <em>Browse database</em> in the first function block.
+<ul>
+<li>Here you can find community created workflow annotation templates.</li>
+</ul>
+</li>
+<li>Search for and select <code>Proteomics MassSpec Assay</code> (name may be issue to change in future updates, pls let us know if there are problems).
+<ul>
+<li>You will see a preview of all building blocks which are part of this template.</li>
+</ul>
+</li>
+<li>Click <em>Add template</em> to add all Building Blocks from the template to your table, which <u>do not exist yet</u>.</li>
+<li>If there are any Building Blocks which do not fit your experiment you can use the <em>Remove Building Block</em> quick access button to remove said Building Block with all related reference (hidden) columns.</li>
+<li>Adjust the Building Blocks you want to use to describe your experiment as you see fit. Insert values using Swate Term search and add input and output.</li>
+<li>Thats it for now! If you are interested in more in-depth documentation click <a href="/index.html">here</a>.</li>
+</ol>
+
+      <h3>
+        Dataplant Support
+      </h3>
+      <div>
+        Besides these technical solutions, DataPLANT supports you with community-engaged data stewardship. For further assistance, feel free to reach out via our 
+        <a href="https://support.nfdi4plants.org">
+          helpdesk
+        </a>
+         or by contacting us 
+        <a href="javascript:location='mailto:info@nfdi4plants.org';void 0">
+          directly
+        </a>
+        .
+      </div>
+      <div>
+        <a target="_blank" href="https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/docs/UserDocs/TL;DR.md" style="margin-left: auto; display: block; width: 130px;">
+          ✏️ Edit this page
+        </a>
+      </div>
+    </nfdi-body>
+  </body>
+  <nfdi-footer></nfdi-footer>
+</html>

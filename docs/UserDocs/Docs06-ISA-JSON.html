@@ -1,0 +1,165 @@
+<html class="has-navbar-fixed-top" style="scroll-behavior: smooth;">
+  <head>
+
+        <script type="text/javascript">
+          var wsUri = "ws://localhost:8080/websocket";
+      function init()
+      {
+        websocket = new WebSocket(wsUri);
+        websocket.onclose = function(evt) { onClose(evt) };
+      }
+      function onClose(evt)
+      {
+        console.log('closing');
+        websocket.close();
+        document.location.reload();
+      }
+      window.addEventListener("load", init, false);
+      </script>
+            <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      DataPLANT documentation - ISA-JSON import and export
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <script type="module" src="/js/bundle.js"></script>
+    <style>
+      
+                    body {
+                    margin: 0px;
+                    }
+
+                    thead tr th, strong {
+                        color: var(--accent-text-color) !important
+                    }
+
+                    a {
+                    color: var(--link-color, #4FB3D9) !important;
+                    }
+
+                    a:hover {
+                    color: var(--link-hover-color, #3A3A3A) !important;
+                    }
+                    
+                    thead {
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
+                    }
+
+                    nfdi-toc, nfdi-body {
+                        --outside-background-color: rgb(240, 243, 246);
+                        --header-color: rgb(10, 12, 16)
+                        --element-text-color: #0E1116;
+                        --element-background-color: #fff;
+                        --accent-text-color: rgb(31, 194, 167);
+                        --link-color: #4FB3D9;
+                        --link-hover-color: #8ad3ee;
+                    }
+
+                
+    </style>
+  </head>
+  <nfdi-navbar></nfdi-navbar>
+  <body>
+    <nfdi-body class="content" hasSidebar="true">
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Feature Documentation
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/index.html">Home</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs01-installing-Swate.html">1. Installing Swate</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs02-Annotation-Table.html">2. Annotation tables</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs03-Building-Blocks.html">3. Building blocks</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs04-Ontology-Term-Search.html">4. Filling cells with ontology terms</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs07-Advanced-Term-Search.html">5. Advanced Term Search</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs05-Templates.html">6. Templates</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs06-ISA-JSON.html">7. ISA-JSON</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Tutorials
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/TL;DR.html">TL;DR</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Dev
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs00-Description.html">Project Description</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs01-Setup.html">Development Setup</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs02-Docker-Publish.html">Docker Publish</h1>
+<!-- # Swate Custom Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Custom-Xml-File
+# Swate Protocol Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-ProtocolGroup-Custom-Xml
+# Swate Validation Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-Validation-Custom-Xml -->
+
+      </nfdi-sidebar-element>
+      <h1 class="front-header">
+        ISA-JSON import and export
+      </h1>
+      <i class="help">
+        last updated at 2022-09-19
+      </i>
+      <br>
+<p>It is possible to export and import your Swate annotation tables to ISA-JSON conform .json files.</p>
+<nfdi-h2 id="isa-json-and-isadotnet">ISA-JSON and ISADotNet</nfdi-h2>
+<p>We follow ISA-JSON <a href="https://isa-specs.readthedocs.io/en/latest/isajson.html#schemas">schemas</a>. To ensure correct Swate import we need to add additional information to the json files.</p>
+<p>For example:</p>
+<ul>
+<li>Add comments to remember column position.</li>
+</ul>
+<nfdi-code class="language-json">"comments": [
+    {
+        "name": "ValueIndex",
+        "value": "0"
+    }
+]
+</nfdi-code>
+<ul>
+<li>Add the term accession to the name to store the unique identifier of ontology terms.</li>
+</ul>
+<nfdi-code class="language-json">"componentName": "LECO instrument model (MS:1001800)",
+</nfdi-code>
+<nfdi-h2 id="export">Export</nfdi-h2>
+<p>This is done via the Swate.Experts interface under the <em>Json Exporter</em> tab.
+You can choose multiple option to export your Swate tables:</p>
+<ul>
+<li>Export the active table or all annotation tables in the workbook.</li>
+<li>Export as <a href="https://isa-specs.readthedocs.io/en/latest/isajson.html#assay-schema-json">assay.json</a> or <a href="https://isa-specs.readthedocs.io/en/latest/isajson.html#process-schema-json">sequence of process.json</a>.</li>
+</ul>
+<nfdi-h2 id="import">Import</nfdi-h2>
+<p>You can import all files created by the Swate export function by using the Swate.Core &quot;Add template(s) from file&quot; option under the &quot;Templates&quot; tab.</p>
+<p>The app will try to fit the imported json to any supported information and directly insert all tables into the excel workbook.</p>
+
+      <h3>
+        Dataplant Support
+      </h3>
+      <div>
+        Besides these technical solutions, DataPLANT supports you with community-engaged data stewardship. For further assistance, feel free to reach out via our 
+        <a href="https://support.nfdi4plants.org">
+          helpdesk
+        </a>
+         or by contacting us 
+        <a href="javascript:location='mailto:info@nfdi4plants.org';void 0">
+          directly
+        </a>
+        .
+      </div>
+      <div>
+        <a target="_blank" href="https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/docs/UserDocs/Docs06-ISA-JSON.md" style="margin-left: auto; display: block; width: 130px;">
+          ✏️ Edit this page
+        </a>
+      </div>
+    </nfdi-body>
+  </body>
+  <nfdi-footer></nfdi-footer>
+</html>

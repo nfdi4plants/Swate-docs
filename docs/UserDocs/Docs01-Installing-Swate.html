@@ -1,0 +1,181 @@
+<html class="has-navbar-fixed-top" style="scroll-behavior: smooth;">
+  <head>
+
+        <script type="text/javascript">
+          var wsUri = "ws://localhost:8080/websocket";
+      function init()
+      {
+        websocket = new WebSocket(wsUri);
+        websocket.onclose = function(evt) { onClose(evt) };
+      }
+      function onClose(evt)
+      {
+        console.log('closing');
+        websocket.close();
+        document.location.reload();
+      }
+      window.addEventListener("load", init, false);
+      </script>
+            <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+      DataPLANT documentation - Installing Swate
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <script type="module" src="/js/bundle.js"></script>
+    <style>
+      
+                    body {
+                    margin: 0px;
+                    }
+
+                    thead tr th, strong {
+                        color: var(--accent-text-color) !important
+                    }
+
+                    a {
+                    color: var(--link-color, #4FB3D9) !important;
+                    }
+
+                    a:hover {
+                    color: var(--link-hover-color, #3A3A3A) !important;
+                    }
+                    
+                    thead {
+                    font-size: 1rem;
+                    }
+
+                    table {
+                        display: block;
+                        overflow: scroll
+                    }
+
+                    nfdi-toc, nfdi-body {
+                        --outside-background-color: rgb(240, 243, 246);
+                        --header-color: rgb(10, 12, 16)
+                        --element-text-color: #0E1116;
+                        --element-background-color: #fff;
+                        --accent-text-color: rgb(31, 194, 167);
+                        --link-color: #4FB3D9;
+                        --link-hover-color: #8ad3ee;
+                    }
+
+                
+    </style>
+  </head>
+  <nfdi-navbar></nfdi-navbar>
+  <body>
+    <nfdi-body class="content" hasSidebar="true">
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Feature Documentation
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/index.html">Home</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs01-installing-Swate.html">1. Installing Swate</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs02-Annotation-Table.html">2. Annotation tables</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs03-Building-Blocks.html">3. Building blocks</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs04-Ontology-Term-Search.html">4. Filling cells with ontology terms</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/docs07-Advanced-Term-Search.html">5. Advanced Term Search</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs05-Templates.html">6. Templates</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/Docs06-ISA-JSON.html">7. ISA-JSON</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Tutorials
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/UserDocs/TL;DR.html">TL;DR</h1>
+
+      </nfdi-sidebar-element>
+      <nfdi-sidebar-element slot="sidebar" isActive="true">
+        <div slot="title">
+          Dev
+        </div>
+        <h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs00-Description.html">Project Description</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs01-Setup.html">Development Setup</h1>
+<h1 slot="inner" href="/nfdi4plants.Swate-docs/docs/DevDocs/ZDocs02-Docker-Publish.html">Docker Publish</h1>
+<!-- # Swate Custom Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Custom-Xml-File
+# Swate Protocol Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-ProtocolGroup-Custom-Xml
+# Swate Validation Xml (deprecated):https://github.com/nfdi4plants/Swate/wiki/Swate-Validation-Custom-Xml -->
+
+      </nfdi-sidebar-element>
+      <h1 class="front-header">
+        Installing Swate
+      </h1>
+      <i class="help">
+        last updated at 2022-09-19
+      </i>
+      <nfdi-h1 id="installing-swate">Installing Swate</nfdi-h1>
+<ol>
+<li><a href="#quickstart">Quickstart in Browser</a></li>
+<li><a href="#desktop-installation">Desktop Installation</a></li>
+<li><a href="#using-a-shared-folder-as-system-admin">Using a shared folder as system admin</a></li>
+</ol>
+<nfdi-h2 id="quickstart">Quickstart</nfdi-h2>
+<p>If you want to jump right into Swate and start testing the environment and features without much fuzz, we recommend using Swate in the Browser. This method uses the web version of Microsoft Excel which can be used for free with an free Microsoft account.</p>
+<ol>
+<li>Download the latest <a href="https://github.com/nfdi4plants/Swate/releases">swate-b-quickstart.zip</a></li>
+<li>Unzip (<code>Right click</code> → <code>Extract All..</code>)</li>
+<li>Navigate to the web version of <a href="https://office.live.com/start/excel.aspx">Excel</a> and log in. Starting this up for the first time might take a minute.</li>
+<li>Click <code>Insert</code> → <code>Office Add-ins</code>/<code>Add-ins</code> → <code>Upload My Add-in</code> and upload the <code>core_manifest.xml</code> from <code>swate-b-quickstart.zip</code>.</li>
+<li>Go to <code>Data</code> and you should see the Swate Core add-in. If not you might need to click on the three dots on the right side to expand your available options.</li>
+<li>Done! 🎉</li>
+</ol>
+<nfdi-h2 id="desktop-installation">Desktop Installation</nfdi-h2>
+<p>If you want to use Swate in your Excel desktop application, you can use the options below.</p>
+<p>⚠️ <strong>If you have an older Swate version installed already, it <u>might</u> be necessary to <a href="https://docs.microsoft.com/de-de/office/dev/add-ins/testing/clear-cache#manually-clear-the-cache-in-excel-word-and-powerpoint">clear the cache</a> to apply the changes to Swate.</strong></p>
+<ul>
+<li>Download the <a href="https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true">Windows Installer</a>. (MacOS-Installer coming soon™)</li>
+<li>Close all Office instances (Excel, Powerpoint, Word, ...)</li>
+<li>Unzip (<code>Right click</code> ➞ <code>Extract All..</code>)</li>
+<li>Double click the <code>install.cmd</code>. You will be asked to give administrative permissions and in the end to allow changes to the registry. Allow both and you are good to go!</li>
+<li>Open Excel, go to <code>Insert</code> ➞ <code>My Add-ins</code> ➞ <code>Shared Folder</code>. There you should see both <code>Swate</code> and <code>Swate.Experts</code>.</li>
+</ul>
+<details><summary>Alternative | Using the previous Swate installer</summary>
+<p>
+<p><a href="https://github.com/omaus/Swate_Install#swate-installer">Swate installer</a></p>
+</p>
+</details>
+<details><summary>Alternative | Using the release archive</summary>
+<p>
+    
+⚠️ This method might not be accessible anymore.
+<p>Using the release archive</p>
+<ul>
+<li>Install <a href="https://nodejs.org/en/">node.js LTS</a> (needed for office addin related tooling)</li>
+<li>Download the <a href="https://github.com/nfdi4plants/Swate/releases">latest test release archive</a> and extract it</li>
+<li>Execute the test.cmd (windows, as administrator) or test.sh (macOS, you will need to make it executable via chmod
+a+x) script.</li>
+</ul>
+</p>
+</details>
+<nfdi-h2 id="using-a-shared-folder-as-system-admin">Using a shared folder as system admin</nfdi-h2>
+<p>If you have administrative access in your organization, you can create a network share folder and follow <a href="https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md#:%7E:text=Sideload%20your%20add%2Din,-Put%20the%20manifest&amp;text=Be%20sure%20to%20specify%20the,element%20of%20the%20manifest%20file.&amp;text=In%20Excel%2C%20Word%2C%20or%20PowerPoint,Office%20Add%2Dins%20dialog%20box.">this guide</a> to make the addin available without any further downloads from your users.</p>
+
+      <h3>
+        Dataplant Support
+      </h3>
+      <div>
+        Besides these technical solutions, DataPLANT supports you with community-engaged data stewardship. For further assistance, feel free to reach out via our 
+        <a href="https://support.nfdi4plants.org">
+          helpdesk
+        </a>
+         or by contacting us 
+        <a href="javascript:location='mailto:info@nfdi4plants.org';void 0">
+          directly
+        </a>
+        .
+      </div>
+      <div>
+        <a target="_blank" href="https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/docs/UserDocs/Docs01-Installing-Swate.md" style="margin-left: auto; display: block; width: 130px;">
+          ✏️ Edit this page
+        </a>
+      </div>
+    </nfdi-body>
+  </body>
+  <nfdi-footer></nfdi-footer>
+</html>
