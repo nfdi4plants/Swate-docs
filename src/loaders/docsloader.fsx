@@ -27,7 +27,7 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
             #if WATCH
             Nfdi4Plants.Docs.loadFile(projectRoot, contentDir, filePath)
             #else
-            Nfdi4Plants.Docs.loadFile(projectRoot, contentDir, filePath, productionBasePath = "nfdi4plants.Swate-docs")
+            Nfdi4Plants.Docs.loadFile(projectRoot, contentDir, filePath, productionBasePath = "Swate-docs")
             #endif
         files 
         |> Array.map loadDocs
