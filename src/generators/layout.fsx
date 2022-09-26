@@ -113,4 +113,4 @@ let render (ctx : SiteContents) cnt =
 
 let docsLayout (docs: Nfdi4Plants.Docs) =
     // just an example url
-    Nfdi4Plants.Components.docsLayout("https://github.com/nfdi4plants/nfdi4plants.github.io/tree/main/src/", docs)
+    Nfdi4Plants.Components.docsLayout("https://github.com/nfdi4plants/Swate-docs/tree/main/src", docs)

@@ -18,7 +18,7 @@ add sidebar: _sidebars\mainSidebar.md
     - 👀 You can hold <kbd>Ctrl</kbd> and click on *Add Annotation Table* to automatically transfer all **output** values from any existing annotation table in the worksheet **before the active one** into the to-be-created-annotation table.
 
 <p style="display: flex; justify-content: center">
-<img src="/images/UserDocs/Swate-CreateAnnotationTable-Exp.jpg?v28.01.202" style="height: 300px">
+<img src="./../../images/UserDocs/Swate-CreateAnnotationTable-Exp.jpg?v28.01.202" style="height: 300px">
 </p>
 
 ## Definition
