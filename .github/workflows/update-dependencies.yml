@@ -40,14 +40,14 @@ jobs:
           node-version: 16
 
       - name: Install rollup
-        # --bundleConfigAsCjs is required since rollup >3.0.0
-        run: npm install --global rollup@3.1.0 --bundleConfigAsCjs
+        run: npm install --global rollup@3.1.0 
 
       - name: Update to latest nfdi4plants web components
         run: npm install @nfdi4plants/web-components@latest
 
       - name: Bundle npm packages
-        run: rollup --config rollup.config.js
+        # --bundleConfigAsCjs is required since rollup >3.0.0
+        run: rollup --config rollup.config.js --bundleConfigAsCjs
           
       - name: Restore dotnet tools
         run: dotnet tool restore
