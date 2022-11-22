@@ -7,8 +7,6 @@ add toc: false
 add sidebar: _sidebars\mainSidebar.md
 ---
 
-# Installing Swate
-
 1. [Quickstart in Browser](#quickstart)
 2. [Desktop Installation](#desktop-installation)
 3. [Using a shared folder as system admin](#using-a-shared-folder-as-system-admin)
