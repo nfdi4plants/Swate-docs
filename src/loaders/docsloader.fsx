@@ -21,7 +21,7 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
         |> Array.filter (fun n -> n.Contains @"\_ignored\" |> not && n.Contains "/_ignored/" |> not)
         // |> Array.filter (fun n -> n.Contains "README.md" |> not)
         |> Array.filter (fun n -> n.EndsWith ".md")
-    let loadDocs (filePath:string) = Nfdi4Plants.Docs.loadFile(projectRoot, contentDir, filePath)
+        
     let docs = 
         let loadDocs (filePath:string) = 
             #if WATCH
