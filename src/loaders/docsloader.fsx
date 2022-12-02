@@ -21,7 +21,7 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
         |> Array.filter (fun n -> n.Contains @"\_ignored\" |> not && n.Contains "/_ignored/" |> not)
         // |> Array.filter (fun n -> n.Contains "README.md" |> not)
         |> Array.filter (fun n -> n.EndsWith ".md")
-        
+
     let docs = 
         let loadDocs (filePath:string) = 
             #if WATCH
@@ -33,12 +33,12 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
         |> Array.map loadDocs
 
 
-    let doc =
-        siteContent.TryGetValues<Nfdi4Plants.Docs> ()
-        |> Option.defaultValue Seq.empty
+    // let doc =
+    //     siteContent.TryGetValues<Nfdi4Plants.Docs> ()
+    //     |> Option.defaultValue Seq.empty
 
-    printfn "LOADER CURRENT DOCS: %i" <| Seq.length doc
-    printfn "LOADER ADDING DOCS: %i" <| Seq.length docs
+    // printfn "LOADER CURRENT DOCS: %i" <| Seq.length doc
+    // printfn "LOADER ADDING DOCS: %i" <| Seq.length docs
 
     // Alternative
     let sc = new SiteContents()
@@ -46,11 +46,11 @@ let loader (projectRoot: string) (siteContent: SiteContents) =
     docs 
     |> Array.iter sc.Add
 
-    let doc2 =
-        sc.TryGetValues<Nfdi4Plants.Docs> ()
-        |> Option.defaultValue Seq.empty
+    // let doc2 =
+    //     sc.TryGetValues<Nfdi4Plants.Docs> ()
+    //     |> Option.defaultValue Seq.empty
 
-    printfn "LOADER NEXT DOCS: %i" <| Seq.length doc2
+    // printfn "LOADER NEXT DOCS: %i" <| Seq.length doc2
 
     sc.Add({disableLiveRefresh = false})
     sc
