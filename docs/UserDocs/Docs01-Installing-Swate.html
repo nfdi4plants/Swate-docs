@@ -96,6 +96,7 @@
       <ol>
 <li><a href="#quickstart">Quickstart in Browser</a></li>
 <li><a href="#desktop-installation">Desktop Installation</a></li>
+<li><a href="#manual-installation">Manual Installation</a></li>
 <li><a href="#using-a-shared-folder-as-system-admin">Using a shared folder as system admin</a></li>
 </ol>
 <nfdi-h2 id="quickstart">Quickstart</nfdi-h2>
@@ -112,7 +113,7 @@
 <li>Done! 🎉</li>
 </ol>
 <nfdi-h2 id="desktop-installation">Desktop Installation</nfdi-h2>
-<p>If you want to use Swate in your Excel desktop application, you can use the options below.</p>
+<p>If you want to use Swate in your Excel desktop application, you can use the options below. If the provided installer does not work for you please try to use the <a href="#manual-installation">manual installation</a>.</p>
 <p>⚠️ <strong>If you have an older Swate version installed already, it <u>might</u> be necessary to <a href="https://docs.microsoft.com/de-de/office/dev/add-ins/testing/clear-cache#manually-clear-the-cache-in-excel-word-and-powerpoint">clear the cache</a> to apply the changes to Swate.</strong></p>
 <ul>
 <li>Download the <a href="https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true">Windows Installer</a>. (MacOS-Installer coming soon™)</li>
@@ -139,6 +140,13 @@ a+x) script.</li>
 </ul>
 </p>
 </details>
+<nfdi-h2 id="manual-installation">Manual Installation</nfdi-h2>
+<p>Because of some leagl roadblocks we encountered as university trying to publish to the Excel add-in store the current installer is far from perfect. Please use the below instructions to enable Swate for your Excel instance step-by-step.</p>
+<ol>
+<li>Download the latest <a href="https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true">Swate manifests</a></li>
+<li>Follow the official microsoft docs to <a href="https://learn.microsoft.com/de-de/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins">sideload Swate in Excel</a>.</li>
+<li>You will need to add the <code>core_manifest.xml</code> (and optionally the <code>experts_manifest.xml</code>) to your shared folder.</li>
+</ol>
 <nfdi-h2 id="using-a-shared-folder-as-system-admin">Using a shared folder as system admin</nfdi-h2>
 <p>If you have administrative access in your organization, you can create a network share folder and follow <a href="https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md#:%7E:text=Sideload%20your%20add%2Din,-Put%20the%20manifest&amp;text=Be%20sure%20to%20specify%20the,element%20of%20the%20manifest%20file.&amp;text=In%20Excel%2C%20Word%2C%20or%20PowerPoint,Office%20Add%2Dins%20dialog%20box.">this guide</a> to make the addin available without any further downloads from your users.</p>
 
