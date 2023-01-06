@@ -9,6 +9,7 @@ add sidebar: _sidebars\mainSidebar.md
 
 1. [Quickstart in Browser](#quickstart)
 2. [Desktop Installation](#desktop-installation)
+4. [Manual Installation](#manual-installation)
 3. [Using a shared folder as system admin](#using-a-shared-folder-as-system-admin)
 
 ## Quickstart
@@ -28,7 +29,7 @@ If you want to jump right into Swate and start testing the environment and featu
 
 ## Desktop Installation
 
-If you want to use Swate in your Excel desktop application, you can use the options below. 
+If you want to use Swate in your Excel desktop application, you can use the options below. If the provided installer does not work for you please try to use the [manual installation](#manual-installation).
 
 ⚠️ **If you have an older Swate version installed already, it <u>might</u> be necessary to [clear the cache](https://docs.microsoft.com/de-de/office/dev/add-ins/testing/clear-cache#manually-clear-the-cache-in-excel-word-and-powerpoint) to apply the changes to Swate.**
 
@@ -60,6 +61,14 @@ a+x) script.
   
 </p>
 </details>
+
+## Manual Installation
+
+Because of some leagl roadblocks we encountered as university trying to publish to the Excel add-in store the current installer is far from perfect. Please use the below instructions to enable Swate for your Excel instance step-by-step.
+
+1. Download the latest [Swate manifests](https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true)
+2. Follow the official microsoft docs to [sideload Swate in Excel](https://learn.microsoft.com/de-de/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
+3. You will need to add the `core_manifest.xml` (and optionally the `experts_manifest.xml`) to your shared folder.
 
 ## Using a shared folder as system admin
 
