@@ -1,6 +1,8 @@
 # Swate_docs
 
-[Link to in depth docs](https://nfdi4plants.github.io/Swate-docs/)
+You can find the in depth docs [here](https://nfdi4plants.github.io/Swate-docs/) :books:
+
+## Development
 
 After initializing this template please run the following commands to get started:
 
