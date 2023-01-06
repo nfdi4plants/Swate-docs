@@ -64,7 +64,7 @@ a+x) script.
 
 ## Manual Installation
 
-Because of some leagl roadblocks we encountered as university trying to publish to the Excel add-in store the current installer is far from perfect. Please use the below instructions to enable Swate for your Excel instance step-by-step.
+Because of some legal roadblocks, we encountered as university trying to publish to the Excel add-in store, the current installer is far from perfect. Please use the below instructions to enable Swate for your Excel instance step-by-step.
 
 1. Download the latest [Swate manifests](https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true)
 2. Follow the official microsoft docs to [sideload Swate in Excel](https://learn.microsoft.com/de-de/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
