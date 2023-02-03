@@ -23,6 +23,8 @@ If you want to jump right into Swate and start testing the environment and featu
 
 If you want to use Swate in your Excel desktop application, you can use the following options:
 
-- [Desktop Installation via installer](./swate_installation_desktop.html) :bulb: Recommended for **Windows** :bulb:
-- [Manual Desktop Installation](./swate_installation_manual.html) :bulb: Recommended for **MacOS** :bulb: 
+- [Desktop Installation via installer](./swate_installation_desktop.html) :bulb: Only for **Windows** :bulb:
+- Manual Desktop Installation
+  - [Installation](./swate_installation_manual.html): Recommended for **Windows** :bulb: 
+  - [Installation](./swate_installation_manual_macos.html): Recommended for **MacOS** :bulb: 
 - [Organization-wide Desktop Installation](./swate_installation_organization.html) :bulb: Requires administrative access in your organization :bulb:
