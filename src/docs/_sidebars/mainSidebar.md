@@ -6,6 +6,11 @@ Article Status: Publishable
 ```Feature Documentation
 # Home:/index.html
 # 1. Installing Swate:/docs/UserDocs/Docs01-Installing-Swate.html
+## Browser:/docs/UserDocs/swate_installation_browser.html
+## Desktop:/docs/UserDocs/swate_installation_desktop.html
+## Manual:/docs/UserDocs/swate_installation_manual.html
+### MacOS:/docs/UserDocs/swate_installation_manual_macos.html
+## Organization-wide:/docs/UserDocs/swate_installation_organization.html
 # 2. Annotation tables:/docs/UserDocs/Docs02-Annotation-Table.html
 # 3. Building blocks:/docs/UserDocs/Docs03-Building-Blocks.html
 # 4. Filling cells with ontology terms:/docs/UserDocs/Docs04-Ontology-Term-Search.html
