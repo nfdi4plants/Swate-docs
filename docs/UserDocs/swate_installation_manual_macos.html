@@ -3,7 +3,7 @@
     <meta charSet="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>
-      DataPLANT documentation - Home
+      DataPLANT documentation - Swate Manual Installation for MacOS Excel Desktop
     </title>
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -93,17 +93,30 @@
 
       </nfdi-sidebar-element>
       <h1 class="front-header">
-        Home
+        Swate Manual Installation for MacOS Excel Desktop
       </h1>
       <i class="help">
-        last updated at 2022-09-19
+        last updated at 2023-02-01
       </i>
-      <nfdi-h1 id="welcome-to-the-swate-wiki">Welcome to the Swate wiki!</nfdi-h1>
-<p>Here you can find documentation about Swate features and best practises. If you want to get a picture of Swate first, you can click <a href="./docs/UserDocs/TL;DR.html">here</a> for an <em>TL;DR</em>. If you want to take a deeper look you can follow the links below.</p>
-<p>To install Swate, follow <a href="./docs/UserDocs/Docs01-Installing-Swate.html">these</a> instructions.<br />
-If you want a more in depth look into the Swate features you can browse through the feature documentation pages in the sidebar.<br />
-If you prefer watching videos, check out the <a href="https://www.youtube.com/playlist?list=PLi6d1LSow4XDPWlwggHuVQ3ynww1MA4Xz">YouTube Playlist</a>!</p>
-<p>We will try to add common workflows and developer information soon!</p>
+      <blockquote>
+<p>Adapted from: <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac">https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac</a></p>
+</blockquote>
+<nfdi-h2 id="prerequisites">Prerequisites</nfdi-h2>
+<ul>
+<li>A Mac running OS X v10.10 &quot;Yosemite&quot; or later with Office on Mac installed.</li>
+<li>Excel on Mac version 15.19 (160206).</li>
+</ul>
+<nfdi-h2 id="steps">Steps</nfdi-h2>
+<ol>
+<li>Download the latest <a href="https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true">Swate manifests</a></li>
+<li>Open a Finder and hit ⌘+⇧+G (or via menu: Go → &quot;Go to Folder...&quot;) to open the &quot;Go to Folder...&quot; dialog</li>
+<li>Navigate to <code>/Users/&lt;username&gt;/Library/Containers/com.microsoft.Excel/Data/Documents/</code> (replace <username> with your user name on the computer)</li>
+<li>(If it does not exit, create and) open the folder <code>wef</code></li>
+<li>Add the files <code>core_manifest.xml</code> (and optionally the <code>experts_manifest.xml</code>) downloaded in step 1 to the folder <code>wef</code>.</li>
+<li>Open a fresh Workbook in Excel, go to the <code>Insert</code> tab.</li>
+<li>Click the arrow next to <code>My Add-ins</code>. There you should be able to select <code>Swate</code> (and optionally <code>Swate.Experts</code>).</li>
+<li>Once selected, Swate appears in the <code>Data</code> tab. <img src="https://raw.githubusercontent.com/nfdi4plants/Branding/master/icons/Swate/Excel/Core/swate_c_48x48.png" alt="Swate.Core Icon" /></li>
+</ol>
 
       <h3>
         DataPLANT Support
@@ -122,7 +135,7 @@ If you prefer watching videos, check out the <a href="https://www.youtube.com/pl
         </span>
       </div>
       <div>
-        <a target="_blank" href="https://github.com/nfdi4plants/Swate-docs/tree/main/src/docs/Home.md" style="margin-left: auto; display: block; width: 130px;">
+        <a target="_blank" href="https://github.com/nfdi4plants/Swate-docs/tree/main/src/docs/UserDocs/swate_installation_manual_macos.md" style="margin-left: auto; display: block; width: 130px;">
           ✏️ Edit this page
         </a>
       </div>

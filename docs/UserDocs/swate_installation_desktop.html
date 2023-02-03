@@ -3,7 +3,7 @@
     <meta charSet="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>
-      DataPLANT documentation - Home
+      DataPLANT documentation - Swate Desktop Installation
     </title>
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -93,17 +93,45 @@
 
       </nfdi-sidebar-element>
       <h1 class="front-header">
-        Home
+        Swate Desktop Installation
       </h1>
       <i class="help">
-        last updated at 2022-09-19
+        last updated at 2023-02-01
       </i>
-      <nfdi-h1 id="welcome-to-the-swate-wiki">Welcome to the Swate wiki!</nfdi-h1>
-<p>Here you can find documentation about Swate features and best practises. If you want to get a picture of Swate first, you can click <a href="./docs/UserDocs/TL;DR.html">here</a> for an <em>TL;DR</em>. If you want to take a deeper look you can follow the links below.</p>
-<p>To install Swate, follow <a href="./docs/UserDocs/Docs01-Installing-Swate.html">these</a> instructions.<br />
-If you want a more in depth look into the Swate features you can browse through the feature documentation pages in the sidebar.<br />
-If you prefer watching videos, check out the <a href="https://www.youtube.com/playlist?list=PLi6d1LSow4XDPWlwggHuVQ3ynww1MA4Xz">YouTube Playlist</a>!</p>
-<p>We will try to add common workflows and developer information soon!</p>
+      <blockquote>
+<p>⚠️ Currently there is no installer available for Linux or MacOS. Please check out the alternatives.</p>
+</blockquote>
+<blockquote>
+<p>💡 As a university trying to publish to the Excel add-in store we encountered some legal roadblocks. Hence the current installer is far from perfect. Please check out the alternatives, if the installer does not work for your setup.</p>
+</blockquote>
+<blockquote>
+<p>⚠️ <strong>If you have an older Swate version installed already, it <u>might</u> be necessary to <a href="https://docs.microsoft.com/de-de/office/dev/add-ins/testing/clear-cache#manually-clear-the-cache-in-excel-word-and-powerpoint">clear the cache</a> to apply the changes to Swate.</strong></p>
+</blockquote>
+<ul>
+<li>Download the <a href="https://github.com/nfdi4plants/Swate/blob/developer/.assets/swate-win.zip?raw=true">Windows Installer</a>.</li>
+<li>Close all Office instances (Excel, Powerpoint, Word, ...)</li>
+<li>Unzip (<code>Right click</code> ➞ <code>Extract All..</code>)</li>
+<li>Double click the <code>install.cmd</code>. You will be asked to give administrative permissions and in the end to allow changes to the registry. Allow both and you are good to go!</li>
+<li>Open Excel, go to <code>Insert</code> ➞ <code>My Add-ins</code> ➞ <code>Shared Folder</code>. There you should see both <code>Swate</code> and <code>Swate.Experts</code>.</li>
+</ul>
+<details><summary>Alternative | Using the previous Swate installer</summary>
+<p>
+<p><a href="https://github.com/omaus/Swate_Install#swate-installer">Swate installer</a></p>
+</p>
+</details>
+<details><summary>Alternative | Using the release archive</summary>
+<p>
+    
+⚠️ This method might not be accessible anymore.
+<p>Using the release archive</p>
+<ul>
+<li>Install <a href="https://nodejs.org/en/">node.js LTS</a> (needed for office addin related tooling)</li>
+<li>Download the <a href="https://github.com/nfdi4plants/Swate/releases">latest test release archive</a> and extract it</li>
+<li>Execute the test.cmd (windows, as administrator) or test.sh (macOS, you will need to make it executable via chmod
+a+x) script.</li>
+</ul>
+</p>
+</details>
 
       <h3>
         DataPLANT Support
@@ -122,7 +150,7 @@ If you prefer watching videos, check out the <a href="https://www.youtube.com/pl
         </span>
       </div>
       <div>
-        <a target="_blank" href="https://github.com/nfdi4plants/Swate-docs/tree/main/src/docs/Home.md" style="margin-left: auto; display: block; width: 130px;">
+        <a target="_blank" href="https://github.com/nfdi4plants/Swate-docs/tree/main/src/docs/UserDocs/swate_installation_desktop.md" style="margin-left: auto; display: block; width: 130px;">
           ✏️ Edit this page
         </a>
       </div>
