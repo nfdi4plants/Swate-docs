@@ -1,27 +1,6 @@
 ---
-published: 2022-05-09
-Article Status: Publishable
+date: 2023-02-14
 ---
-
-```Feature Documentation
-# Home:/index.html
-# 1. Installing Swate:/docs/UserDocs/Docs01-Installing-Swate.html
-## Browser:/docs/UserDocs/swate_installation_browser.html
-## Desktop:/docs/UserDocs/swate_installation_desktop.html
-## Manual:/docs/UserDocs/swate_installation_manual.html
-### MacOS:/docs/UserDocs/swate_installation_manual_macos.html
-## Organization-wide:/docs/UserDocs/swate_installation_organization.html
-# 2. Annotation tables:/docs/UserDocs/Docs02-Annotation-Table.html
-# 3. Building blocks:/docs/UserDocs/Docs03-Building-Blocks.html
-# 4. Filling cells with ontology terms:/docs/UserDocs/Docs04-Ontology-Term-Search.html
-# 5. Advanced Term Search:/docs/UserDocs/Docs07-Advanced-Term-Search.html
-# 6. Templates:/docs/UserDocs/Docs05-Templates.html
-# 7. ISA-JSON:/docs/UserDocs/Docs06-ISA-JSON.html
-```
-
-```Tutorials
-# TL;DR:/docs/UserDocs/TL;DR.html
-```
 
 ```Dev
 # Project Description:/docs/DevDocs/ZDocs00-Description.html
