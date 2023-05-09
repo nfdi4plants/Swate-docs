@@ -47,7 +47,7 @@ jobs:
 
       - name: Bundle npm packages
         # --bundleConfigAsCjs is required since rollup >3.0.0
-        run: rollup --config rollup.config.js --bundleConfigAsCjs
+        run: npm run rollup
           
       - name: Restore dotnet tools
         run: dotnet tool restore
