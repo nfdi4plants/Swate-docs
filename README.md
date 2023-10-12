@@ -1,5 +1,5 @@
----
 # ⚠️ ARCHIVED ⚠️
+---
 
 This repository will be archived. All future developments will be found here:
 - [nfdi4plants.knowledgebase-repo](https://github.com/nfdi4plants/nfdi4plants.knowledgebase)
