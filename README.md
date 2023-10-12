@@ -1,3 +1,11 @@
+---
+# ⚠️ ARCHIVED ⚠️
+
+This repository will be archived. All future developments will be found here:
+- [nfdi4plants.knowledgebase-repo](https://github.com/nfdi4plants/nfdi4plants.knowledgebase)
+- [nfdi4plants.knowledgebase](https://nfdi4plants.github.io/nfdi4plants.knowledgebase/)
+---
+
 # Swate_docs
 
 You can find the in depth docs [here](https://nfdi4plants.github.io/Swate-docs/) :books:
